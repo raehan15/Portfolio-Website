@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raehan Nasir - Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      #bg-animation {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Place it behind other content */
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">Portfolio Website</div>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+        <!-- Add this button -->
+      </nav>
+      <div class="hero">
+        <canvas id="bg-animation"></canvas>
+        <h1>Raehan Nasir</h1>
+        <p>Software Engineer</p>
+        <p class="tagline">I build creative and interactive web experiences</p>
+        <!-- You can add availability here if you like, e.g., <p class="availability">AVAILABLE FOR FREELANCE PROJECTS</p> -->
+      </div>
+    </header>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Hello! I'm Raehan Nasir, a passionate developer with a diverse
+        background in creating beautiful, accessible, and user-friendly digital
+        solutions. My experience spans various fields, including front-end
+        development with React, data science and machine learning, and building
+        full-stack applications with database integration. I thrive on turning
+        complex problems into elegant and interactive web experiences.
+        <!-- Consider adding more specific achievements or unique aspects of your work here -->
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>My Projects</h2>
+      <div class="project-grid">
+        <div class="project-item">
+          <a href="#">
+            <h3>Web Scraping Project</h3>
+            <p>
+              Utilized Beautiful Soup for data scraping and pandas with
+              matplotlib for statistical analysis and visualization.
+            </p>
+          </a>
+        </div>
+        <div class="project-item">
+          <a href="#">
+            <h3>Machine Learning: Penguin Health Classifier</h3>
+            <p>
+              Developed a scikit-learn decision tree classifier for penguin
+              health prediction, including data preprocessing and feature
+              selection.
+            </p>
+          </a>
+        </div>
+        <div class="project-item">
+          <a href="#">
+            <h3>Machine Learning: Model Enhancement</h3>
+            <p>
+              Improved model performance by addressing missing data and
+              hypothesizing new features.
+            </p>
+          </a>
+        </div>
+        <div class="project-item">
+          <a href="#">
+            <h3>Multidimensional Data Analysis Tool</h3>
+            <p>
+              Engineered a Python tool for calculating and visualizing Euclidean
+              distances across 1 to 100 dimensions.
+            </p>
+          </a>
+        </div>
+        <div class="project-item">
+          <a href="#">
+            <h3>k-Nearest Neighbours (k-NN) Classifier</h3>
+            <p>
+              Implemented and optimized a k-NN classifier, including
+              hyperparameter tuning for enhanced accuracy.
+            </p>
+          </a>
+        </div>
+        <div class="project-item">
+          <a href="#">
+            <h3>Flight Management System</h3>
+            <p>
+              Developed a system for passenger information management with
+              multiple views, MySQL database integration for roster export, and
+              authentication/authorization.
+            </p>
+          </a>
+        </div>
+        <div class="project-item">
+          <a href="#">
+            <h3>React Hiring Portal</h3>
+            <p>
+              Built a hiring portal with user (application submission,
+              resume/form upload) and admin (secure auth, application
+              management, graphical data, resume download) workflows.
+            </p>
+          </a>
+        </div>
+        <div class="project-item">
+          <a href="#">
+            <h3>React Component Library</h3>
+            <p>
+              Created a component library with Yarn Storybook, featuring
+              buttons, tables, headers, input fields, date range inputs, and
+              multiselect buttons.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>
+        Feel free to reach out! (Add your contact information or a contact form
+        here)
+      </p>
+      <p>Email: your.email@example.com</p>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Raehan Nasir. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
