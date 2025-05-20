@@ -1,0 +1,355 @@
+/* resume-style.css */
+
+body.resume-page-active {
+  /* overflow: hidden; */ /* Removing this as it might be causing navbar issues */
+  /* Instead, only apply overflow control to the main content area */
+}
+
+.resume-container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center vertically on the page */
+  align-items: center; /* Center horizontally on the page */
+  min-height: calc(100vh - 100px); /* Adjust based on header/footer height */
+  padding: 20px;
+  perspective: 1500px; /* Essential for 3D effect of the book */
+  background-color: var(--background-color); /* Use theme variable */
+  color: var(--text-color); /* Use theme variable */
+}
+
+.book {
+  width: 500px; /* Increased from 420px */
+  height: 700px; /* Increased from 580px */
+  position: relative;
+  transform-style: preserve-3d;
+  /* overflow: hidden; */ /* Removed to allow cover to be interactive when open */
+}
+
+.book-cover,
+.book-page {
+  width: 100%; /* Cover and page are full width of the .book container. */
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0; /* Both start at the same position, cover on top. */
+  background-color: var(--secondary-bg-color, #f0f0f0); /* Fallback color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--accent-color-lighter, #ddd);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  font-family: "Georgia", serif; /* A more book-like font */
+  backface-visibility: hidden; /* Makes the back of the cover invisible when turned. */
+}
+
+.book-cover {
+  z-index: 10; /* Higher z-index to be on top of the page. */
+  transform-origin: left center; /* Spine of the book is on the left. */
+  transition: transform 1.5s cubic-bezier(0.645, 0.045, 0.355, 1); /* Smoother opening */
+  background-image: linear-gradient(
+    45deg,
+    var(--book-cover-gradient-start),
+    var(--book-cover-gradient-end)
+  ); /* Using theme-specific gradient */
+  color: var(--text-on-accent, #fff); /* Text color on cover */
+  transform: rotateY(0deg); /* Starts closed. */
+}
+
+.book-cover h1 {
+  font-size: 2.5em; /* Slightly increased for larger cover */
+  margin-bottom: 12px;
+}
+
+.book-cover p {
+  font-size: 1.2em; /* Slightly increased */
+}
+
+.book-page {
+  z-index: 5; /* Lower z-index, underneath the cover. */
+  overflow-y: auto; /* Allow scrolling if content exceeds page height */
+  padding: 35px 45px; /* Slightly increased padding */
+  align-items: flex-start; /* Align content to top-left */
+  text-align: left;
+  background-color: var(--page-bg-color, #fffaf0); /* Using theme variable */
+  color: var(--page-text-color, #333); /* Using theme variable */
+  font-family: "Times New Roman", Times, serif; /* Classic resume font */
+  line-height: 1.55; /* Adjusted line height */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+  scrollbar-width: thin; /* Thinner scrollbar in Firefox */
+}
+
+/* Make scrollbar less obtrusive in webkit browsers */
+.book-page::-webkit-scrollbar {
+  width: 8px;
+}
+.book-page::-webkit-scrollbar-track {
+  background: transparent;
+}
+.book-page::-webkit-scrollbar-thumb {
+  background-color: rgba(
+    128,
+    128,
+    128,
+    0.3
+  ); /* More visible but not intrusive */
+  border-radius: 20px;
+}
+
+/* Dark theme scrollbar */
+body.dark-theme .book-page::-webkit-scrollbar-thumb {
+  background-color: rgba(200, 200, 200, 0.3); /* Lighter for dark theme */
+}
+
+/* When book is closed, force scroll to top */
+.book:not(.open) .book-page {
+  scroll-top: 0 !important;
+}
+
+/* Book open animation */
+.book.open .book-cover {
+  transform: rotateY(
+    -150deg
+  ); /* Cover opens towards the left. Adjust angle as needed. */
+}
+
+/* Resume Content Styling inside .book-page */
+.resume-content {
+  width: 100%;
+  box-sizing: border-box; /* Ensure padding within .resume-content also respects its bounds */
+}
+
+.resume-header {
+  margin-bottom: 18px; /* Consistent with .resume-section */
+  /* border-bottom: 1px solid var(--accent-color-lighter, #ddd); Removed - will be on h2 */
+  /* padding-bottom: 4px; Removed - will be on h2 */
+}
+
+.resume-header h2 {
+  /* Styling for "Raehan Nasir Ahmed" */
+  font-size: 1.2em; /* Match .resume-section h3 font-size */
+  color: var(--accent-color-darker, #555); /* Match .resume-section h3 color */
+  margin-bottom: 8px; /* Match .resume-section h3 margin-bottom */
+  border-bottom: 1px solid var(--accent-color-lighter, #ddd); /* Add border like .resume-section h3 */
+  padding-bottom: 4px; /* Add padding like .resume-section h3 */
+  text-align: left; /* Align to left */
+}
+
+.resume-header p {
+  /* Styling for phone, email, links */
+  font-size: 0.9em; /* Match .resume-section p/li font-size */
+  margin-bottom: 4px; /* Match .resume-section p/li margin-bottom */
+  text-align: left; /* Align to left */
+}
+
+.resume-section {
+  margin-bottom: 18px;
+}
+
+.resume-section h3 {
+  font-size: 1.2em; /* Adjusted */
+  color: var(
+    --accent-color-darker,
+    #555
+  ); /* Slightly darker accent for section titles */
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--accent-color-lighter, #ddd);
+  padding-bottom: 4px;
+}
+
+.resume-section h4 {
+  font-size: 1.05em; /* Adjusted */
+  color: var(--text-color-strong, #444);
+  margin-bottom: 3px;
+}
+.resume-section h5 {
+  font-size: 0.95em; /* Adjusted */
+  color: var(--text-color-medium, #555);
+  margin-bottom: 2px;
+  font-style: italic;
+}
+
+.job .date,
+.project .date {
+  /* If you add dates to projects */
+  font-size: 0.85em;
+  font-style: italic;
+  color: var(--text-color-light, #777);
+  margin-bottom: 5px;
+}
+
+.resume-section ul {
+  list-style-type: disc; /* Or 'circle' or none if preferred */
+  margin-left: 20px; /* Indent list items */
+  padding-left: 0;
+}
+
+.resume-section ul li {
+  margin-bottom: 4px; /* Adjusted */
+  font-size: 0.9em; /* Adjusted */
+}
+
+.resume-section p {
+  font-size: 0.9em; /* Adjusted */
+  margin-bottom: 4px; /* Adjusted */
+}
+
+/* Style for links within resume sections */
+.resume-section p a {
+  color: var(--page-text-color); /* Inherit color from surrounding text */
+  text-decoration: none; /* No underline by default */
+}
+
+.resume-section p a:hover {
+  color: var(--link-color); /* Change to theme's link color on hover */
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Styling for the new Toggle Book button */
+#toggle-book-btn {
+  display: block;
+  margin-bottom: 20px; /* Keep space below the button, auto margins for L/R not strictly needed due to align-items:center */
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  color: var(--button-text);
+  background-color: var(--button-bg);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#toggle-book-btn:hover {
+  background-color: var(--accent-color-darker);
+  transform: translateY(-1px); /* Slight lift on hover */
+}
+
+#toggle-book-btn:active {
+  transform: translateY(0px); /* Press down effect */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure navbar and toggle button remain visible */
+header,
+nav,
+#toggle-book-btn {
+  position: relative;
+  z-index: 100; /* Higher z-index ensures they're above other elements */
+}
+
+/* Fix navbar link colors */
+body.light-theme nav ul li a {
+  color: #ffffff !important; /* White links in navbar for light theme */
+}
+
+body.light-theme nav ul li a:hover {
+  color: var(--link-hover-color, #e6e6fa) !important; /* Purple on hover */
+}
+
+/* Override root variables for better light/dark theme consistency with main site */
+:root {
+  /* Basic theme variables that apply to both light and dark unless overridden */
+  --background-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --accent-color: #00bcd4;
+  --secondary-bg-color: #2a2a2a;
+  --text-on-accent: #1a1a1a;
+  --page-bg-color: #333333;
+  --page-text-color: #e0e0e0;
+  --link-color: #00bcd4;
+  --accent-color-darker: #008b9e;
+  --accent-color-lighter: #4dcce4;
+  --text-color-strong: #ffffff;
+  --text-color-medium: #cccccc;
+  --text-color-light: #999999;
+  --book-cover-gradient-start: #00bcd4;
+  --book-cover-gradient-end: #008b9e;
+  --button-bg: #00bcd4;
+  --button-text: #1a1a1a;
+}
+
+/* Light Theme Variables - Matching main site's purple theme */
+body.light-theme {
+  --background-color: #ffffff !important;
+  --text-color: #333333 !important;
+  --accent-color: #6a0dad !important;
+  --secondary-bg-color: #e6e6fa !important;
+  --text-on-accent: #ffffff !important;
+  --page-bg-color: #ffffff !important;
+  --page-text-color: #333333 !important;
+  --link-color: #800080 !important;
+  --accent-color-darker: #5a0b8c !important;
+  --accent-color-lighter: #dcdcf0 !important;
+  --text-color-strong: #333333 !important;
+  --text-color-medium: #555555 !important;
+  --text-color-light: #777777 !important;
+  --book-cover-gradient-start: #6a0dad !important;
+  --book-cover-gradient-end: #800080 !important;
+  --button-bg: #800080 !important;
+  --button-text: #ffffff !important;
+}
+
+/* Explicit Dark Theme Variables - These will override the root variables */
+body.dark-theme {
+  --background-color: #1a1a1a !important;
+  --text-color: #e0e0e0 !important;
+  --accent-color: #00bcd4 !important;
+  --secondary-bg-color: #2a2a2a !important;
+  --text-on-accent: #1a1a1a !important;
+  --page-bg-color: #1a1a1a !important; /* Dark background for book pages */
+  --page-text-color: #e0e0e0 !important; /* Light gray text in dark mode */
+  --link-color: #00bcd4 !important;
+  --accent-color-darker: #008b9e !important;
+  --accent-color-lighter: #4dcce4 !important;
+  --text-color-strong: #ffffff !important;
+  --text-color-medium: #cccccc !important;
+  --text-color-light: #999999 !important;
+  --book-cover-gradient-start: #00bcd4 !important;
+  --book-cover-gradient-end: #008b9e !important;
+  --button-bg: #00bcd4 !important;
+  --button-text: #1a1a1a !important;
+}
+
+/* Dark theme specific overrides */
+body.dark-theme .resume-section h3 {
+  color: var(--accent-color) !important; /* Make headings more visible */
+  border-bottom-color: #444444 !important; /* Darker border in dark mode */
+}
+
+body.dark-theme .resume-section h4 {
+  color: #ffffff !important; /* Brighter headings in dark mode */
+}
+
+body.dark-theme .resume-section a {
+  color: var(--accent-color) !important; /* Make links stand out in dark mode */
+}
+
+/* Make sure footer has dark background in dark mode */
+body.dark-theme footer {
+  background-color: #1a1a1a !important;
+  color: #e0e0e0 !important;
+}
+
+/* Add a little script to trigger the animation on page load */
+/* This should be in a <script> tag in resume.html or in script.js if preferred */
+/* For now, I'll assume it's added to resume.html for simplicity */
+
+/*
+To be added in resume.html, at the bottom before </body>:
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const book = document.querySelector('.book');
+    // Trigger the animation shortly after page load
+    setTimeout(() => {
+      book.classList.add('open');
+    }, 500); // 0.5 second delay before opening
+
+    // Optional: Add class to body to handle overflow or other global styles
+    document.body.classList.add('resume-page-active');
+  });
+</script>
+*/

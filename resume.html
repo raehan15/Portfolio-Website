@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raehan Nasir - Resume</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Main site styles -->
+    <link rel="stylesheet" href="resume-style.css" />
+    <!-- Styles for resume page and book animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  </head>
+  <body>
+    <!-- Removed hardcoded dark-theme class to allow JS to set it properly -->
+    <header>
+      <nav>
+        <div class="logo">Portfolio Website</div>
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <!-- Link to resume page -->
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+      </nav>
+    </header>
+
+    <main class="resume-container">
+      <button id="toggle-book-btn">Toggle Book</button>
+      <!-- Added Button -->
+      <div class="book">
+        <div class="book-cover">
+          <div>
+            <h1>Resume</h1>
+            <p>Raehan Nasir Ahmed</p>
+          </div>
+        </div>
+        <div class="book-page">
+          <!-- Resume content will go here -->
+          <div class="resume-content">
+            <section id="first-section" class="resume-section">
+              <h3>About</h3>
+              <p><strong>Raehan Nasir Ahmed</strong></p>
+              <p>
+                <a href="tel:+923223344004">+92 3223344004</a> |
+                <a href="tel:+905517999853">+90 5517999853</a>
+              </p>
+              <p>
+                <a href="mailto:raehan.ahmed@sabanciuniv.edu"
+                  >raehan.ahmed@sabanciuniv.edu</a
+                >
+              </p>
+              <p>
+                <a
+                  href="https://www.linkedin.com/in/raehan-nasir-8293a0248"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >LinkedIn</a
+                >
+                |
+                <a
+                  href="https://github.com/raehan15"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GitHub</a
+                >
+              </p>
+            </section>
+
+            <section class="resume-section">
+              <h3>Work Experience</h3>
+              <div class="job">
+                <h4>Intern: Pakistan Medical Commission IT Department</h4>
+                <p class="date">10th August 2022 – 10th September 2022</p>
+                <ul>
+                  <li>
+                    Spearheaded the management of CMS technical logistics
+                    solving an average of 50 customer complaints daily and
+                    reduced the backlog of customer complaints from 600 to 0.
+                  </li>
+                  <li>
+                    Identified and contributed to fixing 6 critical errors in
+                    the newly launched MDCAT portal in Pakistan.
+                  </li>
+                </ul>
+              </div>
+              <div class="job">
+                <h4>Front-end Intern: NuSoft</h4>
+                <p class="date">20th June 2024 – 31st August 2024</p>
+                <ul>
+                  <li>
+                    Developed a react based online hiring portal using redux
+                    with separate admin and user workflow sections.
+                  </li>
+                  <li>
+                    Built a reusable component library with multiple user
+                    components which was used in two major company projects.
+                  </li>
+                  <li>
+                    Contributed to the front-end development of one of the two
+                    major ongoing company projects “Chaii”.
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="resume-section">
+              <h3>Projects</h3>
+              <div class="project">
+                <h4>Web Scraping Project</h4>
+                <ul>
+                  <li>
+                    Expertly utilized Beautiful Soup for effective data scraping
+                    from webpages.
+                  </li>
+                  <li>
+                    Conducted advanced statistical analyses using a pandas
+                    powered database, culminating in insightful graphical
+                    interpretations with matplotlib.
+                  </li>
+                </ul>
+              </div>
+              <div class="project">
+                <h4>Machine Learning Projects</h4>
+                <ul>
+                  <li>
+                    Developed a decision tree classifier using scikit-learn to
+                    predict penguin health, achieving high accuracy through
+                    effective data preprocessing and feature selection.
+                  </li>
+                  <li>
+                    Enhanced model performance by innovatively addressing
+                    missing data and hypothesizing new features, showcasing
+                    advanced data analysis and machine learning skills.
+                  </li>
+                  <li>
+                    Engineered a multidimensional data analysis tool using
+                    Python, focusing on calculating and visualizing Euclidean
+                    distances across dimensions (1 to 100), demonstrating
+                    advanced data analysis and statistical skills.
+                  </li>
+                  <li>
+                    Applied machine learning expertise by implementing and
+                    optimizing a k-Nearest Neighbours (k-NN) classifier,
+                    including hyperparameter tuning for model enhancement and
+                    accuracy improvement.
+                  </li>
+                </ul>
+              </div>
+              <div class="project">
+                <h4>Web Development Projects</h4>
+                <h5>Flight Management System</h5>
+                <ul>
+                  <li>
+                    Developed a comprehensive flight management system capable
+                    of gathering and presenting detailed passenger information
+                    for selected flights via intuitive views, including tabular,
+                    plane, and extended views.
+                  </li>
+                  <li>
+                    Implemented robust database management, allowing for
+                    efficient storage, retrieval, and export of roster
+                    information in JSON format using MySQL.
+                  </li>
+                  <li>
+                    Designed and integrated authentication/authorization systems
+                    across components, ensuring secure access to sensitive data
+                    and functionalities within the system.
+                  </li>
+                </ul>
+                <h5>React Hiring Portal</h5>
+                <ul>
+                  <li>
+                    User Workflow: Submit job application, upload resume, upload
+                    data forms regarding prior experience.
+                  </li>
+                  <li>
+                    Admin Workflow: Secure authentication process,
+                    view/edit/shortlist all applications, graphical
+                    representations/tables, download applicants’ resumes.
+                  </li>
+                </ul>
+                <h5>React Component Library</h5>
+                <ul>
+                  <li>
+                    Yarn storybook for testing and editing developed components.
+                  </li>
+                  <li>
+                    Components include numerous buttons, table, page headers,
+                    input fields, date range inputs, multiselect buttons.
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="resume-section">
+              <h3>Skills</h3>
+              <ul>
+                <li>
+                  <strong>Database management:</strong> Familiar with using
+                  mongo DB and MySQL for database operations.
+                </li>
+                <li>
+                  <strong>Languages:</strong> Proficient in HTML, CSS, SCSS,
+                  Java, Java script, Typescript, Python, SQL, C++.
+                </li>
+                <li>
+                  <strong>Data Analysis:</strong> Skilled in using pandas for
+                  data analysis and matplotlib for data visualization.
+                </li>
+                <li>
+                  <strong>Web scraping:</strong> Experienced in web scraping
+                  techniques using beautiful soup and selenium.
+                </li>
+                <li>
+                  <strong>Machine Learning:</strong> Familiar with building and
+                  optimizing machine learning models.
+                </li>
+                <li>
+                  <strong>Software Engineering:</strong> Knowledgeable in mobile
+                  application and web development front ends and back ends
+                  including profound experience in react.
+                </li>
+                <li>
+                  <strong>Soft Skills:</strong> Leadership, Communication,
+                  teamwork, management, problem-solving.
+                </li>
+              </ul>
+            </section>
+
+            <section class="resume-section">
+              <h3>Relevant Courses Completed</h3>
+              <p>
+                Advanced Programming, Introduction to Data Science, Data
+                Structures, Algorithms, Software Engineering, Machine Learning,
+                Mobile Application Development, Artificial Intelligence,
+                Computer Networks, Database Systems.
+              </p>
+            </section>
+
+            <section class="resume-section">
+              <h3>Education</h3>
+              <p>
+                <strong>Sabanci University Istanbul Turkey</strong> (4th Year)
+                Undergraduate Computer Science (2021-2025)
+              </p>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        &copy;
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Raehan Nasir. All rights reserved.
+      </p>
+    </footer>
+    <!-- Note: We're removing script.js reference to avoid conflicts -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const book = document.querySelector(".book");
+        const toggleBtn = document.getElementById("toggle-book-btn");
+        const bookPage = document.querySelector(".book-page");
+        const firstSection = document.getElementById("first-section");
+
+        // Initialize theme based on localStorage
+        const storedTheme = localStorage.getItem("theme") || "dark";
+
+        // Apply the theme directly
+        if (storedTheme === "light") {
+          document.body.classList.add("light-theme");
+          document.getElementById("theme-toggle").textContent = "☀️";
+        } else {
+          document.body.classList.add("dark-theme");
+          document.getElementById("theme-toggle").textContent = "🌙";
+        }
+
+        // Theme toggle functionality
+        document
+          .getElementById("theme-toggle")
+          .addEventListener("click", function () {
+            if (document.body.classList.contains("light-theme")) {
+              // Switch to dark theme
+              document.body.classList.remove("light-theme");
+              document.body.classList.add("dark-theme");
+              this.textContent = "🌙";
+              localStorage.setItem("theme", "dark");
+            } else {
+              // Switch to light theme
+              document.body.classList.remove("dark-theme");
+              document.body.classList.add("light-theme");
+              this.textContent = "☀️";
+              localStorage.setItem("theme", "light");
+            }
+          });
+
+        // Book toggle functionality
+        if (toggleBtn && book && bookPage && firstSection) {
+          toggleBtn.addEventListener("click", () => {
+            const isCurrentlyOpen = book.classList.contains("open");
+
+            if (isCurrentlyOpen) {
+              book.classList.remove("open");
+            } else {
+              // Ensure content starts at top before opening
+              bookPage.scrollTop = 0;
+
+              // Now open the book
+              book.classList.add("open");
+
+              // Use more persistent approach that ensures scroll position
+              const tryScrollToFirstSection = () => {
+                // Directly focus on the first section element
+                firstSection.scrollIntoView({
+                  block: "start",
+                  behavior: "auto",
+                });
+
+                // Also set the scrollTop to ensure we're at the top
+                bookPage.scrollTop = 0;
+              };
+
+              // Try immediately
+              tryScrollToFirstSection();
+
+              // Then try several more times to ensure it works after animation
+              setTimeout(tryScrollToFirstSection, 50);
+              setTimeout(tryScrollToFirstSection, 100);
+              setTimeout(tryScrollToFirstSection, 300);
+              setTimeout(tryScrollToFirstSection, 500);
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
